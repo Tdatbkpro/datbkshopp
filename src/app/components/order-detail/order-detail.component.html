@@ -1,0 +1,87 @@
+<app-header></app-header>
+<div class="container">
+    <div class="intro-section">
+        <h1>Chi tiết đơn hàng</h1>
+        <p>Xem thông tin chi tiết đơn hàng</p>
+    </div>
+    
+    <!-- Thông tin người nhận -->
+    @if(orderResponse) {
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="product-header">Thông tin người nhận</h2>
+                <table class="form-table">
+                    <tbody>
+                        <tr>
+                            <td class="form-label">Họ và tên:</td>
+                            <td>{{ orderResponse.fullname }}</td>
+                        </tr>
+                        <tr>
+                            <td class="form-label">Email:</td>
+                            <td>{{ orderResponse.email }}</td>
+                        </tr>
+                        <tr>
+                            <td class="form-label">Số điện thoại:</td>
+                            <td>{{ orderResponse.phone_number }}</td>
+                        </tr>
+                        <tr>
+                            <td class="form-label">Địa chỉ:</td>
+                            <td>{{ orderResponse.address }} - {{ orderResponse.commune }} - {{ orderResponse.district }} - {{ orderResponse.province }}</td>
+                        </tr>
+                        <tr>
+                            <td class="form-label">Ghi chú:</td>
+                            <td>{{ orderResponse.note }}</td>
+                        </tr>
+                        <tr>
+                            <td class="form-label">Phương thức vận chuyển:</td>
+                            <td>{{ orderResponse.shipping_method }}</td>
+                        </tr>
+                        <tr>
+                            <td class="form-label">Phương thức thanh toán:</td>
+                            <td>{{ orderResponse.payment_method }}</td>
+                        </tr>
+                        <tr>
+                            <td class="form-label">Thời gian đặt hàng:</td>
+                            <td>{{ orderResponse.order_date }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                     
+            </div>
+    
+            <!-- Sản phẩm đã đặt hàng -->
+            <div class="col-md-6">
+                <h2 class="product-order">Sản phẩm đã đặt hàng</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-start">Sản phẩm</th>
+                            <th scope="col">Số lượng</th>
+                            <th scope="col">Đơn giá</th>
+                            <th scope="col">Tổng giá</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for(item of orderResponse.order_details; track item.product.name) {
+                            <tr>
+                                <td>
+                                    <div class="product-info">
+                                        <img [src]="item.product.thumbnail" alt="Product Image" class="product-image">
+                                        <span class="product-name">{{ item.product.name }}</span>
+                                    </div>
+                                </td>
+                                <td>{{ item.numberOfProducts }}</td>
+                                <td>{{ item.price | number:'1.2-2' }}</td>
+                                <td>{{ item.totalMoney | number:'1.2-2' }}</td>
+                            </tr>
+                        }                        
+                    </tbody>
+                </table>
+                <div class="text-start mt-3">
+                    <h4 class="header-text text-end">Tổng giá: {{ orderResponse.total_money | number:'1.2-2' }}</h4>
+                </div>            
+            </div>
+        </div>    
+}    
+</div>
+<app-footer></app-footer>

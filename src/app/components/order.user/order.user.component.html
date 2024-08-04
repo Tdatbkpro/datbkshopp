@@ -1,0 +1,86 @@
+<app-header></app-header>
+<div class="container">
+    <div class="intro-section">
+        <h1>Danh sách các đơn hàng đã đặt</h1>
+    </div>
+
+    <!-- Thông tin người nhận -->
+
+    <ng-container *ngFor="let order of orders , let i = index">
+        <div *ngIf="order" style="margin-bottom: 15px;">
+            <h2 class="product-header col-md-12 text-center" >Thông tin đơn hàng thứ {{i + 1}}</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <table class="form-table">
+                        <tbody>
+                            <tr>
+                                <td class="form-label">Họ và tên:</td>
+                                <td>{{ order.fullName }}</td>
+                            </tr>
+                            <tr>
+                                <td class="form-label">Email:</td>
+                                <td>{{ order.email }}</td>
+                            </tr>
+                            <tr>
+                                <td class="form-label">Số điện thoại:</td>
+                                <td>{{ order.phoneNumber }}</td>
+                            </tr>
+                            <tr>
+                                <td class="form-label">Địa chỉ:</td>
+                                <td>{{ order.address }} - {{ order.commune }} - {{ order.district }} - {{ order.province }}</td>
+                            </tr>
+                            <tr>
+                                <td class="form-label">Ghi chú:</td>
+                                <td>{{ order.note }}</td>
+                            </tr>
+                            <tr>
+                                <td class="form-label">Phương thức vận chuyển:</td>
+                                <td>{{ order.shippingMethod }}</td>
+                            </tr>
+                            <tr>
+                                <td class="form-label">Phương thức thanh toán:</td>
+                                <td>{{ order.paymentMethod }}</td>
+                            </tr>
+                            <tr>
+                                <td class="form-label">Thời gian đặt hàng:</td>
+                                <td>{{ order.orderDate }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Sản phẩm đã đặt hàng -->
+                <div class="col-md-6">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-start">Sản phẩm</th>
+                                <th scope="col">Số lượng</th>
+                                <th scope="col">Đơn giá</th>
+                                <th scope="col">Tổng giá</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of order.orderDetailResponses">
+                                <td>
+                                    <div class="product-info">
+                                        <img [src]="item.product.thumbnail" alt="Product Image" class="product-image">
+                                        <span class="product-name">{{ item.product.name }}</span>
+                                    </div>
+                                </td>
+                                <td>{{ item.numberOfProducts }}</td>
+                                <td>{{ item.price | number:'1.2-2' }}</td>
+                                <td>{{ item.totalMoney | number:'1.2-2' }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-start mt-3">
+                        <h4 class="header-text text-end">Tổng giá: {{ order.totalMoney | number:'1.2-2' }}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>
+<app-footer></app-footer>

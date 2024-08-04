@@ -1,0 +1,246 @@
+.intro-section {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+.product-image {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Kích thước của phần tử chứa */
+    overflow: hidden;
+}
+.product-image img {
+    width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo ảnh lấp đầy toàn bộ phần tử chứa */
+  transition: transform 0.3s ease;
+}
+.product-image:hover img {
+    cursor: pointer;
+    transform: scale(1.2); /* Phóng to ảnh lên 120% khi di chuột vào */
+  }
+.thumbnail-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.thumbnail-item {
+    height: 120px;
+    width: 120px;
+    margin-right: 8px;
+
+}
+
+.thumbnail-item:last-child {
+    margin-right: 0;
+}
+
+.thumbnail-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbnail-container {
+    .thumbnail-item {
+      // Các style chung cho tất cả các thẻ .thumbnail-item
+      border: 1px solid #ccc;
+      
+      &.active {
+        // Các style riêng cho thẻ có class .active
+        border: 3.5px solid #5f94d8;
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+  .thumbnail-item:hover img {
+    cursor: pointer;
+  }
+.product-details {
+    color: white;
+    padding: 20px;
+}
+
+.product-actions {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+.product-actions button {
+    margin-right: 10px;
+}
+.product-quantity {
+    outline: solid 1px;
+    padding: 3px;
+    width: 100px;
+    text-align: center;
+}
+.product-quantity button {
+    background-color: transparent;
+    border: none;
+    color:#fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.product-quantity input {
+    background-color: transparent;
+    border: none;
+    color:#fff;
+    font-size: 16px;
+    text-align: center;
+    width: 40px;
+    padding: 0 10px;
+}
+.product-quantity input:focus {
+    outline: none;
+}
+.product-amount {
+    display: flex;
+  justify-content: flex-start; // Căn giữa các items theo chiều ngang
+  align-items: center;     // Căn giữa các items theo chiều dọc (nếu container có chiều cao cố định)
+  flex-wrap: wrap;  
+  padding: 0;
+  p {
+    margin: 0; // Đảm bảo rằng không có khoảng cách thừa
+  }
+
+  .product-quantity {
+    margin-left: 15px; // Khoảng cách giữa thẻ <p> và .product-quantity (nếu cần)
+  }
+}
+
+
+.comment-section {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  color: #333;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.comment-section {
+  background-color: #f9f9f9; /* Nền sáng hơn */
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 20px auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Bóng đổ sâu hơn */
+}
+
+.section-title {
+  color: #2c3e50;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 12px;
+}
+.comment-section {
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  color: aliceblue;
+  margin-bottom: 1rem;
+}
+
+.comment-form {
+  margin-bottom: 1rem;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comment-list {
+  margin-top: 1rem;
+}
+
+.comment {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  position: relative;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.comment-user-info {
+  flex: 1;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.comment-date {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.comment-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.action-btn:hover {
+  color: #0056b3;
+}
+
+.edit-btn {
+  color: #007bff;
+}
+
+.delete-btn {
+  color: #dc3545;
+}
+

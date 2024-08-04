@@ -1,0 +1,122 @@
+<app-header></app-header>
+<div class="container">
+    <div class="intro-section">
+        <h1>Đây là trang chi tiết sản phẩm</h1>
+        <p>Bạn có thể xem chi tiết sản phẩm đã chọn
+        </p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="carousel slide" id="carouselExampleAutoplaying" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item " 
+                    *ngFor="let product_image of product?.product_images ; let i = index"
+                    [ngClass]="{'active': i === currentImageIndex}"
+                    >
+                        <div class="square-image product-image">
+                            <img [src]="product_image.image_url"
+                                alt="Product Image" class="d-block w-100">
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" role="button" data-slide="prev"
+                    data-bs-target="#carouselExample" (click)="previousImage()" >
+                    <span class="carousel-control-prev-icon" aria-hidden="true"  ></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" role="button" data-slide="next"
+                    data-bs-target="#carouselExample" (click)="nextImage()">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+
+            <div class="row">
+                <div class="thumbnail-container">
+                    <div class="thumbnail-item active"  
+                    *ngFor="let product_image of product?.product_images ; let i = index"
+                    [ngClass]="{'active': i === currentImageIndex}"
+                    (click)="thumbnail(i)"
+                    >
+                        <img [src]="product_image.image_url"
+                            alt="Thumbnail Image" class="thumbnail-image">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="col-md-6">
+            <div class="product-details" 
+            [(ngModel)]="product">
+                <h2><span style="color: aqua;">Tên sản phẩm : </span>
+                     {{product?.name}}</h2>
+                <br>
+                <p><span style="color: aqua;">Mô tả : </span>
+                    {{product?.description}}</p>
+                <br>
+                <p class="product-price">
+                    <span style="color: aqua;">Giá : </span>
+                  {{product?.price | currency: 'VND' : 'symbol' : '1.0-0'}}</p>
+                
+                <div class="product-amount">
+                <p><span style="color: aqua;">Số lượng : </span></p>
+                <div class="product-quantity">
+                    <div class="border-wrapper">
+                        <button (click)="decreaseQuantity()">-</button>
+                        <input type="text" [value]="quantity">
+                        <button (click)="increaseQuantity()">+</button>
+                    </div>
+                </div>
+                </div>
+                <div class="product-actions">
+                    <button class="btn btn-primary" (click)="addToCart()">Thêm vào giỏ hàng</button>
+                    <button class="btn btn-success" routerLink="/orders" (click)="buyNow()">Mua ngay</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="comment-section">
+        <h2 class="section-title" style="color:black">Bình luận</h2>
+    
+        <!-- Comment Form -->
+        <div class="comment-form">
+            <textarea [(ngModel)]="content" placeholder="Viết bình luận của bạn tại đây..."></textarea>
+            <button class="btn btn-primary" (click)="submitComment()">Gửi</button>
+        </div>
+    
+        <!-- Comment List -->
+        <div class="comment-list">
+            <div class="comment" *ngFor="let comment of comments">
+                <div class="comment-header">
+                    <!-- Optional: Profile Picture -->
+                    <!-- <img [src]="comment.user.profilePictureUrl || 'assets/default-profile.png'" alt="{{ comment.user.fullname }}" class="profile-picture" /> -->
+                    <div class="comment-user-info">
+                        <strong class="user-name">{{ comment.user.fullname }}</strong>
+                        <div class="mr-2"></div>
+                        <span class="comment-date">{{ comment.updated_at | date:'d/M/yyyy h:mm a' }}</span>
+                    </div>
+                    <!-- Edit and Delete Icons -->
+                    <div class="comment-actions">
+                        
+                        <button  class="action-btn edit-btn" (click)="editComment()"title="Sửa">
+                            <i class="fas fa-edit"></i> <!-- Font Awesome Edit Icon -->
+                        </button>
+                        
+                        <button class="action-btn delete-btn" (click)="deleteComment(comment.id)" title="Xóa">
+                            <i class="fas fa-trash-alt"></i> <!-- Font Awesome Trash Icon -->
+                        </button>
+                    </div>
+                </div>
+                <p class="comment-content">{{ comment.content }}</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+</div>
+<app-footer></app-footer>

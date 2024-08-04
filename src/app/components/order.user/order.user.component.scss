@@ -1,0 +1,55 @@
+.container{
+    color:#fff;
+}
+.intro-section {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(255,255,255,0.1);
+}
+table {
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 10px;
+    border-collapse: separate;
+    border: 1px solid white;
+    border-spacing: 0;
+    background: linear-gradient(rgb(14,17,36), rgb(36, 26 , 73));
+}
+.product-info {
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.product-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.product-name {
+    margin-right: 10px;
+}
+
+th,td {
+    padding: 10px;
+    text-align: center;
+
+}
+
+.btn-gradient {
+    background: linear-gradient(to right, rgb(225,64,180) , rgb(126,43,237));
+    color:#fff;
+    border-radius: 20px;
+    width: 200px;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+}
