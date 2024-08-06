@@ -19,11 +19,6 @@
     "lib": [
       "ES2022",
       "dom"
-    ],
-    "exclude": [
-      "src/server.ts",
-      "src/main.server.ts",
-      "src/app/app.module.server.ts"
     ]
   },
   "angularCompilerOptions": {
@@ -31,5 +26,8 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
 }
