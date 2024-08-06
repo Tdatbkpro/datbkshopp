@@ -21,7 +21,9 @@
             "outputPath": "dist/shopapp-angular/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "styles": "src/styles.scss,
+            "styles": [
+              "src/styles.scss"
+            ],
             "polyfills": [
               "zone.js",
               "@angular/localize/init"
@@ -32,14 +34,11 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
             "scripts": [],
             "allowedCommonJsDependencies": [
-      "class-validator",
-      "validator"
-    ]
+              "class-validator",
+              "validator"
+            ]
           },
           "configurations": {
             "production": {
