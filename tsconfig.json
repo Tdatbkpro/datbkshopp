@@ -29,5 +29,10 @@
   },
   "include": [
     "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/server.ts",
+    "src/app/app.module.server.ts",
+    "src/main.server.ts"
   ]
 }
