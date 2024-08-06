@@ -22,7 +22,8 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "scss"
             ],
             "polyfills": [
               "zone.js",
