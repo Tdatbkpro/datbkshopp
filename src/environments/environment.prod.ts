@@ -1,6 +1,6 @@
 // src/environments/environment.prod.ts
 export const environment = {
     production: true,
-    apiBaseUrl: 'https://datbkshoppapp.onrender.com/api/v1'
+    apiBaseUrl: 'https://datbkshoppapp.onrender.com'
   };
   
