@@ -1,0 +1,30 @@
+# Stage 1: Build the Angular application
+FROM node:14 AS build
+
+WORKDIR /app
+
+# Cài đặt Angular CLI toàn cầu
+RUN npm install -g @angular/cli
+
+# Sao chép package.json và package-lock.json
+COPY package.json package-lock.json ./
+RUN npm install
+
+# Sao chép mã nguồn Angular vào container
+COPY . .
+
+# Xây dựng ứng dụng Angular
+RUN ng build --prod
+
+# Stage 2: Serve the application
+FROM nginx:alpine
+
+# Sao chép tệp đã xây dựng từ stage trước đó vào thư mục của Nginx
+COPY --from=build /app/dist/shopapp-angular/usr/share/nginx/html
+
+# Cấu hình Nginx
+COPY nginx.conf /etc/nginx/nginx.conf
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
