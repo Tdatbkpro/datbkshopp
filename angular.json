@@ -21,7 +21,7 @@
             "outputPath": "dist/shopapp-angular/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "styles": "src/styles.scss
+            "styles": "src/styles.scss,
             "polyfills": [
               "zone.js",
               "@angular/localize/init"
