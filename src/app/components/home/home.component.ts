@@ -3,7 +3,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
-import { environment } from '../../enviroments/environment';
+import { environment } from '../../../environments/environment';
 import { Category } from '../../models/category';
 import { CategoryService } from '../../services/category.service';
 import { Router } from '@angular/router';

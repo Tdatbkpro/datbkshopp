@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { inject } from '@angular/core';
 
 import { Observable } from 'rxjs';
-import { environment } from '../../../enviroments/environment';
+import { environment } from '../../../../environments/environment';
 import { OrderDTO } from '../../../dtos/order/order.dto';
 import { OrderResponse } from '../../../responses/order/order.response';
 import { OrderService } from '../../../services/order.service';

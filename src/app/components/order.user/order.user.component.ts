@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../../services/order.service';
 import { ActivatedRoute } from '@angular/router';
 import { TokenService } from '../../services/token.service';
-import { environment } from '../../enviroments/environment';
+import { environment } from '../../../environments/environment';
 import { Order } from '../../models/order';
 
 @Component({

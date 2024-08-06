@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../enviroments/environment';
+import { environment } from '../../environments/environment';
 import { Product } from '../models/product';
 import { InsertProductDTO } from '../dtos/product/insert.product.dto';
 import { UpdateProductDTO } from '../dtos/product/update.product.dto';

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { RegisterDTO } from '../dtos/user/register.dto';
 import { LoginComponent } from '../components/login/login.component';
 import { LoginDTO } from '../dtos/user/login.dto';
-import { environment } from '../enviroments/environment';
+import { environment } from '../../environments/environment';
 import { LoginResponse } from '../responses/user/login.response';
 import { UserResponse } from '../responses/user/user.response';
 import { UpdateUserDTO } from '../dtos/user/update.user.dto';

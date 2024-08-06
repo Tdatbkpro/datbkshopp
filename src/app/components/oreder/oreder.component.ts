@@ -3,7 +3,7 @@ import { Product } from '../../models/product';
 import { OrderDTO } from '../../dtos/order/order.dto';
 import { CartService } from '../../services/cart.service';
 import { ProductService } from '../../services/product.service';
-import { environment } from '../../enviroments/environment';
+import { environment } from '../../../environments/environment';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OrderService } from '../../services/order.service';
 import { Validator } from 'class-validator';

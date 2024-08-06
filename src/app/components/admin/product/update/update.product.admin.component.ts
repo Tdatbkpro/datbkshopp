@@ -5,7 +5,7 @@ import { Product } from '../../../../models/product';
 import { Category } from '../../../../models/category';
 import { ProductService } from '../../../../services/product.service';
 import { CategoryService } from '../../../../services/category.service';
-import { environment } from '../../../../enviroments/environment';
+import { environment } from '../../../../../environments/environment';
 import { ProductImage } from '../../../../models/product.image';
 import { UpdateProductDTO } from '../../../../dtos/product/update.product.dto';
 import { CommonModule } from '@angular/common';

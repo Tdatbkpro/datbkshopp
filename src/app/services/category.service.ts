@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../enviroments/environment';
+import { environment } from '../../environments/environment';
 import { Category } from '../models/category';
 import { InsertCategoryDTO } from '../dtos/category/insert.category.dto';
 import { UpdateCategoryDTO } from '../dtos/category/update.category.dto';

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
 import { ProductImage } from '../../models/product.image';
-import { environment } from '../../enviroments/environment';
+import { environment } from '../../../environments/environment';
 import { CartService } from '../../services/cart.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommentService } from '../../services/comment.service';
