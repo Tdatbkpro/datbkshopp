@@ -23,7 +23,7 @@
             "main": "src/main.ts",
             "styles": [
               "src/styles.scss",
-              "scss"
+              "bootstrap.min.css"
             ],
             "polyfills": [
               "zone.js",
