@@ -24,10 +24,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "allowedCommonJsDependencies": [
-              "class-validator",
-              "validator"
-            ]
             "outputPath": "dist/shopapp-angular/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -46,6 +42,8 @@
             ],
             "scripts": [],
             "allowedCommonJsDependencies": [
+              "class-validator",
+              "validator",
               "validator/lib/isISO31661Alpha3",
               "validator/lib/isMongoId",
               "validator/lib/isMultibyte",
