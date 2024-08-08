@@ -11,16 +11,16 @@ export class TokenInterceptor implements HttpInterceptor {
     constructor(private tokenService: TokenService) {}
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        debugger
-        const token = this.tokenService.getToken();
+        let authReq = req; // Khởi tạo biến yêu cầu mới
+        const token = this.tokenService.getToken(); // Lấy token từ service
         if (token) {
-            req = req.clone({
+            authReq = req.clone({ // Clone yêu cầu và thêm header Authorization
                 setHeaders: {
                     Authorization: `Bearer ${token}`
                 }
             });
         }
-        console.log(req.headers.get('Authorization')); // Kiểm tra tiêu đề yêu cầu
-        return next.handle(req);
+        console.log('Request Headers:', authReq.headers.keys()); // Kiểm tra các header được thêm vào
+        return next.handle(authReq); 
     }
 }
